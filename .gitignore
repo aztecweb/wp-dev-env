@@ -1,0 +1,15 @@
+# Project files
+/public
+
+# Eclipse Project
+.settings/
+.buildpath
+.project
+
+# Mac OS X
+.DS_Store
+
+# Composer
+/vendor/
+/composer.lock
+/composer.phar
