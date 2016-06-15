@@ -2,6 +2,18 @@
 
 My WordPress theme development environment.
 
+## Defining plugins and themes
+
+This project use the WPackagist to manage the plugins and themes instalation. Read the [WPackagist](http://wpackagist.org/) home page to see how to define the themes that you want in your installation.
+
+## Installation
+
+Execute the command:
+
+	$ composer install
+
+The WordPress installation will be available in the /public directory.
+
 ## Starting development
 
 The project was started early. My idea is publish my WordPress theme development workflow. I use a toolbox to automated the installation and management of the project. Some features that I use in my project:
