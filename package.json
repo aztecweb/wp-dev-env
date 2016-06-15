@@ -1,0 +1,17 @@
+{
+  "name": "myenvpress",
+  "description": "My WordPress development environment",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:edpittol/MyEnvPress.git"
+  },
+  "version": "0.0.0",
+  "license": "GPL-2.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sync": "^0.5.2",
+    "load-grunt-tasks": "^3.5.0"
+  }
+}

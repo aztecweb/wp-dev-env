@@ -8,9 +8,13 @@ This project use the WPackagist to manage the plugins and themes instalation. Re
 
 ## Installation
 
-Execute the command:
+Install PHP dependencies
 
 	$ composer install
+	
+Install Node dependencies
+
+	$ npm install
 
 The WordPress installation will be available in the /public directory.
 
@@ -19,6 +23,22 @@ The WordPress installation will be available in the /public directory.
 To update plugins and themes, execute:
 
 	$ composer update
+	
+## Grunt tasks
+
+The Grunt task runner is used to automate the common tasks of the project.
+
+### default
+
+The default task update the project with the server. Execute this task before starting the development ou after git synchronization.
+
+	$ grunt
+	
+### watch
+
+Listen all changes in the project files. This command is integrated with the [Livereload](http://livereload.com/extensions/) browser extension. To any server file change, the browser automatically refresh the page. This command maintain alive until you kill it with a `ctrl + c`. Maintain alive while you work in the development.
+
+	$ grunt watch
 
 ## Starting development
 

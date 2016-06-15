@@ -13,3 +13,6 @@
 /vendor/
 /composer.lock
 /composer.phar
+
+# Node
+node_modules/
