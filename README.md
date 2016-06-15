@@ -14,6 +14,12 @@ Execute the command:
 
 The WordPress installation will be available in the /public directory.
 
+## Update
+
+To update plugins and themes, execute:
+
+	$ composer update
+
 ## Starting development
 
 The project was started early. My idea is publish my WordPress theme development workflow. I use a toolbox to automated the installation and management of the project. Some features that I use in my project:
