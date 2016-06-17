@@ -28,6 +28,10 @@ module.exports = function( grunt ) {
 				files: ['.stylintrc', 'theme/stylus/**/*.styl'],
 				tasks: ['stylint', 'stylus:dev']
 			},
+			js: {
+				files: ['theme/js/**/*'],
+				tasks: ['concat']
+			}
 		},
 	
 		// sync the files with local test wordpress
@@ -66,11 +70,41 @@ module.exports = function( grunt ) {
 		stylint: {
 			src: ['theme/stylus/**/*.styl']
 		},
+		
+		/*
+		 * concat bower components, this plugin manage the dependecies.
+		 * 
+		 * Create a temporary file in the /tmp dir with all components cancatenated.
+		 */
+		bower_concat: {
+		    main: {
+		        dest: 'tmp/bower.js'
+		    }
+		},
+		
+		// concat bower components and theme scripts
+		concat: {
+		    dev: {
+				options : {
+					sourceMap : true,
+					sourceMapStyle: 'inline'
+				},
+		        src: [
+		            'tmp/bower.js',
+		            'theme/js/*.js'
+		        ],
+		        dest: '<%= config.server %>/assets/js/script.js'
+		    },
+		    dist: {
+				src : [ 'tmp/bower.js', 'theme/js/*.js' ],
+				dest : '<%= config.server %>/assets/js/script.js'
+		    }
+		}
 	});
 	
 	// default task: build the theme to development
-	grunt.task.registerTask('default', ['sync:theme', 'stylint', 'stylus:dev']);
+	grunt.task.registerTask('default', ['sync:theme', 'stylint', 'stylus:dev', 'bower_concat', 'concat:dev']);
 	
 	// dist task: build the theme to production
-	grunt.task.registerTask('dist', ['sync:theme', 'stylint', 'stylus:dist']);
+	grunt.task.registerTask('dist', ['sync:theme', 'stylint', 'stylus:dist', 'bower_concat', 'concat:dist']);
 };
