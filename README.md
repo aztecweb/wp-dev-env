@@ -39,6 +39,10 @@ The default task update the project with the server. Execute this task before st
 Listen all changes in the project files. This command is integrated with the [Livereload](http://livereload.com/extensions/) browser extension. To any server file change, the browser automatically refresh the page. This command maintain alive until you kill it with a `ctrl + c`. Maintain alive while you work in the development.
 
 	$ grunt watch
+	
+## Stylus
+
+This env use stylus to preprocess the CSS styles. The files stay inner the `theme/stylus`. The files is processed by grunt tasks. Read the [Stylus documentation](http://stylus-lang.com/). 
 
 ## Starting development
 
