@@ -30,7 +30,7 @@ module.exports = function( grunt ) {
 			},
 			js: {
 				files: ['theme/js/**/*'],
-				tasks: ['concat']
+				tasks: ['concat:dev']
 			}
 		},
 	
@@ -91,20 +91,45 @@ module.exports = function( grunt ) {
 				},
 		        src: [
 		            'tmp/bower.js',
-		            'theme/js/*.js'
+		            'tmp/script.js'
 		        ],
 		        dest: '<%= config.server %>/assets/js/script.js'
 		    },
 		    dist: {
-				src : [ 'tmp/bower.js', 'theme/js/*.js' ],
+				src : [ 'tmp/bower.js', 'tmp/script.js' ],
 				dest : '<%= config.server %>/assets/js/script.js'
 		    }
+		},
+
+		// compile the application into a file
+		requirejs : {
+			dist : {
+				options : {
+					baseUrl: 'theme/js',
+					include: 'script.js',
+					out: 'tmp/script.js',
+				}
+			}
 		}
 	});
 	
 	// default task: build the theme to development
-	grunt.task.registerTask('default', ['sync:theme', 'stylint', 'stylus:dev', 'bower_concat', 'concat:dev']);
+	grunt.task.registerTask('default', [
+			'sync:theme', 
+			'stylint', 
+			'stylus:dev', 
+			'bower_concat', 
+			'requirejs:dist',
+			'concat:dev',
+	]);
 	
 	// dist task: build the theme to production
-	grunt.task.registerTask('dist', ['sync:theme', 'stylint', 'stylus:dist', 'bower_concat', 'concat:dist']);
+	grunt.task.registerTask('dist', [
+			'sync:theme',
+			'stylint',
+			'stylus:dist',
+			'bower_concat',
+			'requirejs:dist',
+			'concat:dist'
+	]);
 };
