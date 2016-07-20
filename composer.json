@@ -22,7 +22,6 @@
 	],
 	"require" : {
 		"wordpress/wordpress" : "*",
-		"wpackagist-theme/twentysixteen" : "*",
 		"wp-cli/wp-cli" : "~0.23"
 	},
 	"extra" : {
