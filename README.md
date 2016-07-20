@@ -42,7 +42,15 @@ Listen all changes in the project files. This command is integrated with the [Li
 	
 ## Stylus
 
-This env use stylus to preprocess the CSS styles. The files stay inner the `theme/stylus`. The files is processed by grunt tasks. Read the [Stylus documentation](http://stylus-lang.com/). 
+This env use stylus to preprocess the CSS styles. The files stay inner the `theme/stylus`. The files is processed by grunt tasks. Read the [Stylus documentation](http://stylus-lang.com/).
+
+## RequireJS
+
+The env is ready to use RequireJS. The main script is `theme/js/app.js`. It is loaded in the `theme/src/includes/myenvpress.php` file.
+
+## Bower
+
+The front-end libraries is managed by Bower. They are managed in the `bower.json` file. The Grunt bower tasks automagically copy the libs to the server. The server path is configured in RequireJS to be loaded as a module. 
 
 ## Starting development
 
