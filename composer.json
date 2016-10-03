@@ -2,31 +2,31 @@
 	"name" : "edpittol/myenvpress",
 	"description" : "My WordPress development environment.",
 	"repositories" : [{
-			"type" : "composer",
-			"url" : "https://wpackagist.org"
-		}, {
-			"type" : "package",
-			"package" : {
-				"name" : "wordpress/wordpress",
-				"type" : "webroot",
-				"version" : "4.5.2",
-				"dist" : {
-					"type" : "zip",
-					"url" : "https://wordpress.org/wordpress-4.5.2-no-content.zip"
-				},
-				"require" : {
-					"fancyguy/webroot-installer" : "^1.0"
-				}
-			}
-		}
-	],
+		"type" : "composer",
+		"url" : "https://wpackagist.org"
+	}],
 	"require" : {
-		"wordpress/wordpress" : "*",
-		"wp-cli/wp-cli" : "~0.23"
+		"wp-cli/wp-cli" : "~0.23",
+		"symfony/process": "~2.8"
+	},
+	"autoload": {
+		"psr-4": { 
+			"MyEnvPress\\": "src/"
+		}
+	},
+	"scripts" : {
+		"pre-install-cmd" : [
+			"MyEnvPress\\Script\\InstallScript::preInstall"
+		],
+		"post-install-cmd" : [
+			"MyEnvPress\\Script\\InstallScript::postInstall"
+		],
+		"pre-update-cmd" : [
+			"MyEnvPress\\Script\\UpdateScript::preUpdate"
+		]
 	},
 	"extra" : {
 		"webroot-dir" : "public",
-		"webroot-package" : "wordpress/wordpress",
 		"installer-paths" : {
 			"public/wp-content/plugins/{$name}/" : [
 				"type:wordpress-plugin"

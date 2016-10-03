@@ -1,0 +1,17 @@
+path: public
+url: http://myenvpress
+
+core download:
+  locale: pt_BR
+  version: 3.7
+
+core config:
+  dbname: myenvpress
+  dbuser: root
+
+core install:
+  title: MyEnvPress
+  admin_user: admin
+  admin_password: secret
+  admin_email: admin@admin.com
+  skip-email: true

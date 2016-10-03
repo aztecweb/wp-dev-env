@@ -2,11 +2,27 @@
 
 My WordPress theme development environment.
 
-## Defining plugins and themes
+## WordPress Management
 
-This project use the WPackagist to manage the plugins and themes instalation. Read the [WPackagist](http://wpackagist.org/) home page to see how to define the themes that you want in your installation.
+The project use [WP-CLI](http://wp-cli.org/) and [WPackagist](http://wpackagist.org/) to manage the WordPress Core, plugins and themes installation.
+
+The WP-CLI manage the core updates and maintenance tasks, like wp-config generation and database installation. The plugins and themes of the official WordPress repository is defined in the composer.json. Read the [WPackagist](http://wpackagist.org/) home page to see how to define them.
+
+## The public directory
+
+The public directory contain the WordPress installation. This directory is not part of the project. The files in this directory cannot be modified. They can overrid during an install or update command.
+
+Configure your webserver to the public directory to be the root directory of the server.
+
+## Configuration
+
+The project configuration is managed by WP-CLI. [Click here](http://wp-cli.org/config/) to read more about WP-CLI configuration.
+
+Create a copy of the .wp-cli.yml file called .wp-cli.local.yml and configure with your local parameters.
 
 ## Installation
+
+Be sure that you set your local configuration.
 
 Install PHP dependencies
 
@@ -15,8 +31,6 @@ Install PHP dependencies
 Install Node dependencies
 
 	$ npm install
-
-The WordPress installation will be available in the /public directory.
 
 ## Update
 
@@ -52,13 +66,3 @@ The env is ready to use RequireJS. The main script is `theme/js/app.js`. It is l
 
 The front-end libraries is managed by Bower. They are managed in the `bower.json` file. The Grunt bower tasks automagically copy the libs to the server. The server path is configured in RequireJS to be loaded as a module. 
 
-## Starting development
-
-The project was started early. My idea is publish my WordPress theme development workflow. I use a toolbox to automated the installation and management of the project. Some features that I use in my project:
-
-* [Composer webroot installer](https://github.com/fancyguy/webroot-installer) - manage WP core installations and updates
-* [WPackagist](http://wpackagist.org/) - manage plugins and themes installations and updates
-* [Grunt](http://gruntjs.com/) - To run dist package creation and another project necessary tasks
-* [Stylus](http://stylus-lang.com/) - CSS preprocessor
-* Manage WP configuration values, database connection and basic site informations with a project config file.
-* Console commands to manage the installation
