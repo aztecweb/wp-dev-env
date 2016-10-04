@@ -3,7 +3,10 @@
 namespace MyEnvPress\Script;
 
 use Composer\Script\Event;
-use MyEnvPress\Command\Command;
+use MyEnvPress\Extra\Themes;
+use MyEnvPress\Extra\Plugins;
+use MyEnvPress\Extra\Data;
+use MyEnvPress\Helper\CommandHelper;
 
 class InstallScript
 {
@@ -25,7 +28,7 @@ class InstallScript
 	 */
 	public static function postInstall(Event $event)
 	{
-		$command = new Command();
+		$command = new CommandHelper();
 		
 		echo "Installing WordPress...\n";
 		$command->run('core download');
@@ -38,5 +41,15 @@ class InstallScript
 		
 		echo "Installing site...\n";
 		$command->run('core install');
+
+		echo "Installing extra packages and data...\n";
+		$themes = new Themes();
+		$themes->execute();
+		
+		$plugins = new Plugins();
+		$plugins->execute();
+		
+		$data = new Data();
+		$data->execute();
 	}
 }

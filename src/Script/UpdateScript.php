@@ -3,7 +3,7 @@
 namespace MyEnvPress\Script;
 
 use Composer\Script\Event;
-use MyEnvPress\Command\Command;
+use MyEnvPress\Helper\Command;
 
 class UpdateScript
 {
@@ -14,7 +14,7 @@ class UpdateScript
 	 */
 	public static function preUpdate(Event $event)
 	{
-		$command = new Command();
+		$command = new CommandHelper();
 		
 		echo "Updating WordPress...\n";
 		$command->run('core update');

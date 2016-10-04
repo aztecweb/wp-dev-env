@@ -3,7 +3,6 @@ url: http://myenvpress
 
 core download:
   locale: pt_BR
-  version: 3.7
 
 core config:
   dbname: myenvpress
