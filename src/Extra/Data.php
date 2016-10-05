@@ -27,6 +27,13 @@ class Data extends Extra {
 	{
 		$command = new CommandHelper();
 		
+		$resources = $this->getResources();
+		
+		// to avoid plugin download, skipping the process if no resources
+		if (0 === $resources->count()) {
+		    return;
+		}
+		
 		$importPlugin = new Plugin('wordpress-importer');
 		$isInstalled = $importPlugin->isInstalled();
 		
