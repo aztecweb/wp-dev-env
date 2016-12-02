@@ -1,5 +1,5 @@
 path: public
-url: http://myenvpress
+url: http://localhost:8080
 
 core download:
   locale: pt_BR
