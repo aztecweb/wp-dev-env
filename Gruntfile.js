@@ -15,7 +15,7 @@ module.exports = function( grunt ) {
 		// watch for changes for files and execute an execute a task
 		watch: {
 			livereload: {
-				files: 'public/**/*',
+				files: ['public/**/*', '!**/*.log'],
 				options: {
 					livereload: true
 				}
