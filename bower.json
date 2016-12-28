@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs": "^2.2.0"
+    "requirejs": "^2.2.0",
+    "normalize.styl": "^4.1.1"
   }
 }
