@@ -6,35 +6,5 @@
 		"url" : "https://wpackagist.org"
 	}],
 	"require" : {
-		"wp-cli/wp-cli" : "~0.23",
-		"symfony/process" : "~2.8",
-		"symfony/finder" : "~2.8"
-	},
-	"autoload": {
-		"psr-4": { 
-			"MyEnvPress\\": "src/"
-		}
-	},
-	"scripts" : {
-		"pre-install-cmd" : [
-			"MyEnvPress\\Script\\InstallScript::preInstall"
-		],
-		"post-install-cmd" : [
-			"MyEnvPress\\Script\\InstallScript::postInstall"
-		],
-		"pre-update-cmd" : [
-			"MyEnvPress\\Script\\UpdateScript::preUpdate"
-		]
-	},
-	"extra" : {
-		"webroot-dir" : "public",
-		"installer-paths" : {
-			"public/wp-content/plugins/{$name}/" : [
-				"type:wordpress-plugin"
-			],
-			"public/wp-content/themes/{$name}/" : [
-				"type:wordpress-theme"
-			]
-		}
 	}
 }
