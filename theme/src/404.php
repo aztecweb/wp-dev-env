@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package WordPress
+ * @subpackage MyEnvPress
+ * @since 0.1.0
+ * @version 0.1.0
+ */
+
+get_header(); ?>
 
 	<main>
 		<section>
@@ -6,7 +18,7 @@
 
 				<h1>Page not found</h1>
 				<p>
-					<a href="<?php echo home_url(); ?>">Back to home</a>
+					<a href="<?php echo esc_url( home_url() ); ?>">Back to home</a>
 				</p>
 
 			</article>

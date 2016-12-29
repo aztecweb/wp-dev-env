@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="myenvpress">
+    <description>The PHP coding standard.</description>
+    
+    <config name="installed_paths" value="../../wp-coding-standards/wpcs" />
+ 
+     <!-- 
+         Use WordPress coding standard
+         https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+         https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
+     -->
+    <rule ref="WordPress">
+        <exclude name="WordPress.VIP.RestrictedVariables" />
+        <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+    </rule>
+ 
+    <!-- Sniff the theme files -->
+    <file>./theme/src/</file>
+</ruleset>
