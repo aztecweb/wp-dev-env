@@ -38,6 +38,6 @@ if ( ! function_exists( 'head_viewport' ) ) :
 	 * Add the reponsive meta tag.
 	 */
 	function head_viewport() {
-		printf( '<meta name="viewport" content="width=device-width, initial-scale=1">%s', wp_kses( PHP_EOL ) );
+		printf( '<meta name="viewport" content="width=device-width, initial-scale=1">%s', wp_kses( PHP_EOL, array() ) );
 	}
 endif;
