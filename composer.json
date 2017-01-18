@@ -6,8 +6,7 @@
 		"url" : "https://wpackagist.org"
 	}],
 	"require" : {
-	},
-	"require-dev": {
-		"wp-coding-standards/wpcs": "^0.10.0"
-    }
+		"wpackagist-theme/storefront" : "*",
+		"wpackagist-plugin/woocommerce" : "*"
+	}
 }
