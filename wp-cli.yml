@@ -5,12 +5,12 @@ core download:
   locale: pt_BR
 
 core config:
-  dbname: myenvpress
+  dbname: modaut
   dbuser: root
 
 core install:
-  title: MyEnvPress
+  title: Modaut
   admin_user: admin
-  admin_password: secret
+  admin_password: admin
   admin_email: admin@admin.com
   skip-email: true
