@@ -1,16 +1,6 @@
 #!/bin/bash
 
-# Verify if Composer are installed
-if ! composer -V > /dev/null 2>&1; then
-    echo 'Composer is required to run the script.';
-    exit 1;
-fi
-
-# Verify if WP-CLI are installed
-if ! wp cli version > /dev/null 2>&1; then
-    echo 'WP-CLI is required to run the script.';
-    exit 1;
-fi
+source /Users/edpittol/.bash_profile
 
 # Verify if the WordPress is installed, if not download and create the
 # wp-config.php
