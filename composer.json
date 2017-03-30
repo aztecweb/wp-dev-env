@@ -2,12 +2,12 @@
 	"name" : "edpittol/myenvpress",
 	"description" : "My WordPress development environment.",
 	"repositories" : [{
-		"type" : "composer",
-		"url" : "https://wpackagist.org"
-	}],
-	"require" : {
-	},
-	"require-dev": {
-		"wp-coding-standards/wpcs": "^0.10.0"
-    }
+			"type" : "composer",
+			"url" : "https://wpackagist.org"
+		}
+	],
+	"require-dev" : {
+		"wp-cli/wp-cli" : "^1.1.0",
+		"wp-coding-standards/wpcs" : "^0.10.0"
+	}
 }
