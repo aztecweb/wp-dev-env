@@ -22,21 +22,28 @@ Create a copy of the .wp-cli.yml file called .wp-cli.local.yml and configure wit
 
 ## Installation
 
-Be sure that you set your local configuration.
+Execute the command
 
-Install PHP dependencies
-
-	$ composer install
+	$ bin/install
 	
-Install Node dependencies
+This command will
 
-	$ npm install
+* Download the latest WordPress version
+* Create the database, if doen't exist
+* Generate the wp-config.php file
+* Install the WordPress
+* Install plugins and themes inner the `extra` directory
+* Install plugins and themes defined in `composer.json` file
+* Import XML files inner the `extra/data` directory 
+* Update language packages
+* Install NPM and Bower dependencies
+* Build the theme
 
-## Update
+## Run the application
 
-To update plugins and themes, execute:
+Use the PHP built-in server to run the application. The WP-CLI wrap the server command adding a specific router for the WordPress. To up the server, run the command:
 
-	$ composer update
+	$ vendor/bin/wp server
 	
 ## Grunt tasks
 
@@ -64,5 +71,4 @@ The env is ready to use RequireJS. The main script is `theme/js/app.js`. It is l
 
 ## Bower
 
-The front-end libraries is managed by Bower. They are managed in the `bower.json` file. The Grunt bower tasks automagically copy the libs to the server. The server path is configured in RequireJS to be loaded as a module. 
-
+The front-end libraries is managed by Bower. They are managed in the `bower.json` file. The Grunt bower tasks automagically copy the libs to the server. The server path is configured in RequireJS to be loaded as a module.
