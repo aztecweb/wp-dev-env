@@ -4,14 +4,15 @@
     
     <config name="installed_paths" value="../../wp-coding-standards/wpcs" />
  
-     <!-- 
+    <!-- 
          Use WordPress coding standard
          https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
          https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
+         
+         Exclude lowercase generic rule in favour of PSR-4
      -->
-    <rule ref="WordPress">
-        <exclude name="WordPress.VIP.RestrictedVariables" />
-        <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+    <rule ref="WordPress-Extra">
+        <exclude name="Generic.Files.LowercasedFilename" />
     </rule>
  
     <!-- Sniff the theme files -->

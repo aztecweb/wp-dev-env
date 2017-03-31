@@ -5,7 +5,7 @@
  * grunt-bower task.
  */
 requirejs.config({
-    baseUrl: myenvpress_requirejs.base_url,
+    baseUrl: myenvpress.base_url,
     paths: {
         app: '../app',
         libs: '../libs'
@@ -20,8 +20,8 @@ if (typeof jQuery === 'function') {
 }
 
 // start the application
-requirejs(['jquery', 'app/sub'], function($, sub) {
+requirejs( [ 'jquery', 'app/sub' ], function( $, sub ) {
 	// example function calls
-	console.log($);
+	console.log( $.fn.jquery );
 	sub.print();
 });

@@ -1,36 +1,32 @@
 <?php
+
+use MyEnvPress\Kernel;
+
 /**
- * Theme functions and definitions
+ * Theme functionalities bootstrap
+ *
+ * This theme use PHP-DI to manage the classes dependencies. To access the
+ * container object, use the global variable `$container`.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link http://php-di.org/doc/
  *
  * @package WordPress
- * @subpackage MyEnvPress
- * @since 0.1.0
- * @version 0.1.0
  */
 
 /**
- * Require theme assets management file
+ * Require the Composer autoload file
  */
-require_once 'includes/assets.php';
+require_once __DIR__ . '/../../../../vendor/autoload.php';
 
 /**
- * Require theme disable emoji file
+ * The theme container object
+ *
+ * @global DI\Container $container
  */
-require_once 'includes/disable-emoji.php';
+global $container;
 
-/**
- * Require theme assets management file
- */
-require_once 'includes/head.php';
+$builder = new \DI\ContainerBuilder();
+$container = $builder->build();
 
-/**
- * Require theme HTTP headers management file
- */
-require_once 'includes/http-headers.php';
-
-/**
- * Require theme setup file
- */
-require_once 'includes/setup.php';
+$container->get( Kernel::class )->init();

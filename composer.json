@@ -6,8 +6,16 @@
 			"url" : "https://wpackagist.org"
 		}
 	],
+	"require" : {
+		"php-di/php-di" : "^5.4"
+	},
 	"require-dev" : {
-		"wp-cli/wp-cli" : "^1.1.0",
-		"wp-coding-standards/wpcs" : "^0.10.0"
+		"wp-cli/wp-cli" : "^1.1",
+		"wp-coding-standards/wpcs" : "^0.10"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"MyEnvPress\\" : "public/wp-content/themes/myenvpress/includes/"
+		}
 	}
 }
