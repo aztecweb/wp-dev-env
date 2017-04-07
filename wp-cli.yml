@@ -1,6 +1,10 @@
 path: public
 url: http://localhost:8080
 
+disabled_commands: 
+  # disable core config in favour of dotenv
+  - core config 
+
 core download:
   locale: pt_BR
 
@@ -9,7 +13,7 @@ core config:
   dbuser: root
 
 core install:
-  title: Aztec WordpPress Development Environment
+  title: Aztec WordPress Development Environment
   admin_user: admin
   admin_password: admin
   admin_email: admin@admin.com
