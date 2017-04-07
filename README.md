@@ -1,6 +1,6 @@
-# MyEnvPress
+# Aztec WordPress Development Environment
 
-My WordPress theme development environment.
+Our WordPress development environment development base.
 
 ## WordPress Management
 
@@ -67,7 +67,7 @@ This env use stylus to preprocess the CSS styles. The files stay inner the `them
 
 ## RequireJS
 
-The env is ready to use RequireJS. The main script is `theme/js/app.js`. It is loaded in the `theme/src/includes/myenvpress.php` file.
+The env is ready to use RequireJS. The main script is `theme/js/app.js`. It is loaded in the Assets class.
 
 ## Bower
 

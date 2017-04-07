@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="myenvpress">
+<ruleset name="aztec-wp-dev-env">
     <description>The PHP coding standard.</description>
     
     <config name="installed_paths" value="../../wp-coding-standards/wpcs" />

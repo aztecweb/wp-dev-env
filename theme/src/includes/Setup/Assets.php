@@ -2,12 +2,12 @@
 /**
  * Theme assets setup.
  *
- * @package MyEnvPress
+ * @package AztecWpDevEnv
  */
 
-namespace MyEnvPress\Setup;
+namespace AztecWpDevEnv\Setup;
 
-use MyEnvPress\Base;
+use AztecWpDevEnv\Base;
 
 /**
  * Manipulate the stylesheets and javascripts
@@ -28,7 +28,7 @@ class Assets extends Base {
 	 * Enqueue the theme style file
 	 */
 	public function enqueue_style() {
-		wp_enqueue_style( 'myenvpress', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+		wp_enqueue_style( 'aztec-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 	}
 
 	/**
@@ -38,8 +38,8 @@ class Assets extends Base {
 	 * file url path.
 	 */
 	function enqueue_script() {
-	    wp_enqueue_script( 'myenvpress', get_stylesheet_directory_uri() . '/assets/js/libs/require.js', [ 'jquery' ], false, true );
-	    wp_localize_script( 'myenvpress', 'myenvpress', [
+	    wp_enqueue_script( 'aztec-script', get_stylesheet_directory_uri() . '/assets/js/libs/require.js', [ 'jquery' ], false, true );
+	    wp_localize_script( 'aztec-script', 'aztec_script', [
 	        'base_url' => get_stylesheet_directory_uri() . '/assets/js/libs',
 	    ] );
 	}
@@ -53,7 +53,7 @@ class Assets extends Base {
 	 * @return string The HTML tag adding the main application script.
 	 */
 	function script_loader_tag( $tag, $handle, $src ) {
-	    if ( 'myenvpress' === $handle ) {
+	    if ( 'aztec-script' === $handle ) {
 	        $require_main = get_stylesheet_directory_uri() . '/assets/js/app';
 	        return '<script data-main="' . $require_main . '" src="' . $src . '"></script>';
 	    }

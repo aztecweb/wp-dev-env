@@ -1,6 +1,6 @@
 {
-	"name" : "edpittol/myenvpress",
-	"description" : "My WordPress development environment.",
+	"name" : "aztecweb/wp-dev-env",
+	"description" : " Our WordPress development environment development base.",
 	"repositories" : [{
 			"type" : "composer",
 			"url" : "https://wpackagist.org"
@@ -15,7 +15,7 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"MyEnvPress\\" : "public/wp-content/themes/myenvpress/includes/"
+			"AztecWpDevEnv\\" : "public/wp-content/themes/aztec-wp-dev-env/includes/"
 		}
 	}
 }

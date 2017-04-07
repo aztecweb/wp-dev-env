@@ -5,11 +5,11 @@ core download:
   locale: pt_BR
 
 core config:
-  dbname: myenvpress
+  dbname: aztecwpdevenv
   dbuser: root
 
 core install:
-  title: MyEnvPress
+  title: Aztec WordpPress Development Environment
   admin_user: admin
   admin_password: admin
   admin_email: admin@admin.com

@@ -1,11 +1,11 @@
 {
-  "name": "myenvpress",
-  "description": "My WordPress development environment",
+  "name": "aztec-wp-dev-env",
+  "description": "Our WordPress development environment development base.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:edpittol/MyEnvPress.git"
+    "url": "git@github.com:aztecweb/wp-dev-env.git"
   },
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "GPL-2.0",
   "main": "Gruntfile.js",
   "devDependencies": {

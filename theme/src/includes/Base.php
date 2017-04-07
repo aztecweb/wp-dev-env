@@ -2,10 +2,10 @@
 /**
  * Base class
  *
- * @package MyEnvPress
+ * @package AztecWpDevEnv
  */
 
-namespace MyEnvPress;
+namespace AztecWpDevEnv;
 
 use DI\Container;
 

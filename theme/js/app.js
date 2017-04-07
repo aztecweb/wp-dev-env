@@ -5,7 +5,7 @@
  * grunt-bower task.
  */
 requirejs.config({
-    baseUrl: myenvpress.base_url,
+    baseUrl: aztec_script.base_url,
     paths: {
         app: '../app',
         libs: '../libs'
