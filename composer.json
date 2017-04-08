@@ -15,7 +15,7 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"AztecWpDevEnv\\" : "public/wp-content/themes/aztec-wp-dev-env/includes/"
+			"AztecWpDevEnv\\" : "src/"
 		}
 	}
 }
