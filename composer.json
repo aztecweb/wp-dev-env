@@ -7,7 +7,9 @@
 		}
 	],
 	"require" : {
-		"php-di/php-di" : "^5.4"
+		"php-di/php-di" : "^5.4",
+		"vlucas/phpdotenv" : "^2.4",
+		"aaemnnosttv/wp-cli-dotenv-command" : "^1.0"
 	},
 	"require-dev" : {
 		"wp-cli/wp-cli" : "^1.1",
@@ -16,6 +18,9 @@
 	"autoload" : {
 		"psr-4" : {
 			"AztecWpDevEnv\\" : "src/"
-		}
+		},
+		"files" : [
+			"src/WP_CLI/bootstrap.php"
+		]
 	}
 }
