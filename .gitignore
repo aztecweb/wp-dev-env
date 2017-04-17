@@ -2,6 +2,7 @@
 /public/
 !/public/wp-config.php
 .salts
+.env
 
 # Eclipse Project
 .settings/

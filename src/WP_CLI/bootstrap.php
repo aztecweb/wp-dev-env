@@ -1,4 +1,11 @@
 <?php
+/**
+ * Custom WP_CLI bootstrap file
+ * 
+ * This file is loaded by the Composer.
+ * 
+ * @package AztecWpDevEnv
+ */
 
 use AztecWpDevEnv\WP_CLI\Dotenv as Aztec_WP_CLI_Dotenv;
 
