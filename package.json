@@ -13,6 +13,7 @@
     "grunt-bower": "^0.21.2",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell": "^2.1.0",
     "grunt-stylint": "^0.1.2",
     "grunt-sync": "^0.5.2",
     "load-grunt-tasks": "^3.5.0"

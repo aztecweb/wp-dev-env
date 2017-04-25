@@ -4,7 +4,8 @@
  * @param {object} grunt The Grunt object.
  */
 module.exports = function ( grunt ) {
-	grunt.task.registerTask( 'default', [
+	grunt.task.registerTask( 'dist', [
+			'shell:install',
 			'sync:theme',
 			'stylint',
 			'stylus:dist',

@@ -5,10 +5,12 @@
  */
 module.exports = function ( grunt ) {
 	grunt.task.registerTask( 'default', [
+			'shell:install',
 			'sync:theme',
 			'stylint',
 			'stylus:dev',
 			'bower:copy',
-			'sync:requirejs'
+			'sync:requirejs',
+			'shell:data'
 	]);
 };

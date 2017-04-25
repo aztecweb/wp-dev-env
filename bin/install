@@ -23,17 +23,15 @@ composer install
 
 WP_CLI='vendor/bin/wp'
 
-# Verify if the WordPress is installed, if not download and create the
-# wp-config.php
+# Verify if the WordPress is downloaded
 if [ ! -f public/wp-load.php ]; then
     echo 'Downloading WordPress'
     $WP_CLI core download
 fi
 
-# Create the wp-config.php file, if not exists
-if [ ! -f public/wp-config.php ]; then
-    echo 'Configuring WordPress'
-    $WP_CLI core config
+# Generate env salts file
+if [ ! -f .salts ]; then
+	$WP_CLI dotenv salts generate --file='.salts'
 fi
 
 # Install the WordPress if it isn't
@@ -67,30 +65,9 @@ fi
 # Activate all plugins
 $WP_CLI plugin activate --all
 
-# Remove menu items before import
-$WP_CLI post delete $($WP_CLI post list --post_type='nav_menu_item' --format=ids) 2> /dev/null
-
-# Import data
-datafiles=extra/data/*.xml
-if [ $(ls -la ${datafiles} 2> /dev/null | wc -l) -gt 0 ]; then # verify if has packages inner the directory
-    if ! $WP_CLI plugin is-installed wordpress-importer; then
-        $WP_CLI plugin install wordpress-importer
-    fi
-
-    $WP_CLI plugin activate wordpress-importer
-
-    for data in $datafiles
-    do
-        $WP_CLI import $data --authors=create
-    done
-fi
-
-# Update language
+# Update language of core, theme and plugins
 $WP_CLI core language update
 
 # Install NPM and Bower dependencies
 npm install
 bower install
-
-# Build the theme
-grunt
