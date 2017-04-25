@@ -2,6 +2,8 @@
 #
 # Install website test data
 
+WP_CLI='vendor/bin/wp'
+
 # Remove menu items before import
 $WP_CLI post delete $($WP_CLI post list --post_type='nav_menu_item' --format=ids) 2> /dev/null
 
