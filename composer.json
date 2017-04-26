@@ -7,6 +7,7 @@
 		}
 	],
 	"require" : {
+		"johnpbloch/wordpress" : "^4.7",
 		"php-di/php-di" : "^5.4",
 		"vlucas/phpdotenv" : "^2.4",
 		"aaemnnosttv/wp-cli-dotenv-command" : "^1.0"
@@ -22,5 +23,8 @@
 		"files" : [
 			"src/WP_CLI/bootstrap.php"
 		]
+	},
+	"extra" : {
+		"wordpress-install-dir" : "public"
 	}
 }

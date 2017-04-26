@@ -1,6 +1,5 @@
 # Project files
 /public/
-!/public/wp-config.php
 .salts
 .env
 

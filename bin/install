@@ -1,37 +1,22 @@
 #!/bin/bash
 
-# Verify if Composer is installed
-if ! composer --version > /dev/null 2>&1; then
-    echo 'Composer is required to run the script.';
-    exit 1;
-fi
-
-# Verify if grunt-cli is installed
-if ! grunt --version > /dev/null 2>&1; then
-    echo 'grunt-cli is required to run the script.';
-    exit 1;
-fi
-
-# Verify if Bower is installed
-if ! bower --version > /dev/null 2>&1; then
-    echo 'Bower is required to run the script.';
-    exit 1;
-fi
-
-# Install packages defined by composer.json file
-composer install
+# Check if the system 
 
 WP_CLI='vendor/bin/wp'
 
-# Verify if the WordPress is downloaded
-if [ ! -f public/wp-load.php ]; then
-    echo 'Downloading WordPress'
-    $WP_CLI core download
+if [ ! -f .env ]; then
+	echo 'Dotenv file not found'
+	exit 1
 fi
 
 # Generate env salts file
 if [ ! -f .salts ]; then
 	$WP_CLI dotenv salts generate --file='.salts'
+fi
+
+if ! $WP_CLI db check 2> /dev/null; then
+	echo 'Database connection error'
+	exit 2
 fi
 
 # Install the WordPress if it isn't
@@ -67,7 +52,3 @@ $WP_CLI plugin activate --all
 
 # Update language of core, theme and plugins
 $WP_CLI core language update
-
-# Install NPM and Bower dependencies
-npm install
-bower install

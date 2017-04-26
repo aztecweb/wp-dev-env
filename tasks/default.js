@@ -5,12 +5,13 @@
  */
 module.exports = function ( grunt ) {
 	grunt.task.registerTask( 'default', [
-			'shell:install',
-			'sync:theme',
-			'stylint',
-			'stylus:dev',
-			'bower:copy',
-			'sync:requirejs',
-			'shell:data'
-	]);
+		'stylint',
+		'composer:update',
+		'copy:config',
+		'shell:bower',
+		'sync:theme',
+		'stylus:dev',
+		'bower:copy',
+		'sync:requirejs'
+	] );
 };

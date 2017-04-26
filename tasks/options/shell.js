@@ -7,5 +7,8 @@ module.exports = {
 	},
 	data: {
 		command: 'bin/data'
+	},
+	bower: {
+		command: 'bower install'
 	}
 };

@@ -23,5 +23,9 @@ module.exports = {
 	bower: {
 		files: [ 'bower_components/**/*' ],
 		tasks: [ 'bower:dev' ]
+	},
+	config: {
+		files: [ 'extra/wp-config.php' ],
+		tasks: [ 'copy:config' ]
 	}
 };
